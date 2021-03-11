@@ -1,5 +1,3 @@
-import ShopPage from "./shop.component"
-
 const SHOP_DATA = [
     {
       id: 1,
