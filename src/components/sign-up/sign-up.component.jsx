@@ -20,7 +20,7 @@ class SignUp extends React.Component {
         event.preventDefault();
         const { displayName, email, password, confirmPassword } = this.state;
 
-        if (password != confirmPassword) {
+        if (password !== confirmPassword) {
             alert("passwords don't match");
             return;
         }        
@@ -39,7 +39,8 @@ class SignUp extends React.Component {
 
     }
 
-    handleChange = ({name, value}) => { 
+    handleChange = (event) => { 
+        const { name, value } = event.target;
         this.setState({ [name]: value });
     }
 
@@ -54,7 +55,7 @@ class SignUp extends React.Component {
                         type='text'
                         name='displayName'
                         value={displayName}
-                        onChaange={this.handleChange}
+                        onChange={this.handleChange}
                         label='Display Name'
                         required
                     />
@@ -62,7 +63,7 @@ class SignUp extends React.Component {
                         type='email'
                         name='email'
                         value={email}
-                        onChaange={this.handleChange}
+                        onChange={this.handleChange}
                         label='Email'
                         required
                     />
@@ -70,7 +71,7 @@ class SignUp extends React.Component {
                         type='password'
                         name='password'
                         value={password}
-                        onChaange={this.handleChange}
+                        onChange={this.handleChange}
                         label='Password'
                         required
                     />
@@ -78,7 +79,7 @@ class SignUp extends React.Component {
                         type='password'
                         name='confirmPassword'
                         value={confirmPassword}
-                        onChaange={this.handleChange}
+                        onChange={this.handleChange}
                         label='Confirm Password'
                         required
                     />
