@@ -1,5 +1,4 @@
 import { createSelector } from 'reselect'
-import { CartActionTypes } from './cart.types';
 
 const selectCart = state => state.cart 
 
