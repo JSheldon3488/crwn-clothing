@@ -41,6 +41,12 @@ export const QuantityContainer = styled(TextContainer)`
     span {
         margin: 0 10px;
     }
+
+    @media screen and (max-width: 800px) {
+        span {
+            margin: 0 5px;
+        }
+    }
 `;
 
 export const RemoveButtonContainer = styled.div`
