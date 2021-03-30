@@ -6,7 +6,7 @@ export const HeaderContainer = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 `;
 
 export const LogoContainer = styled(Link)`
@@ -21,9 +21,12 @@ export const OptionsContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-top: 15px;
 `;
 
 export const OptionLink = styled(Link)`
-    padding: 10px 15px;
+    padding: 10px 18px;
     cursor: pointer;
+    font-size: 1.2em;
+    margin-top: 5px;
 `;
