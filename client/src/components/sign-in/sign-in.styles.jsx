@@ -13,4 +13,16 @@ export const SignInButtonsContainer = styled.div`
 
 export const SignInTitle = styled.h2`
     margin: 15px 0;
+
+    @media screen and (max-width: 800px) {
+        text-align: center;
+        margin-bottom: 0;
+    }
+`;
+
+export const SignInMessage = styled.span`
+    @media screen and (max-width: 800px) {
+        display: none;
+        
+    }
 `;

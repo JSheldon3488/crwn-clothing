@@ -6,7 +6,7 @@ import CustomButton from '../custom-button/custom-button.component';
 
 import { googleSignInStart, emailSignInStart } from '../../redux/user/users.actions'
 
-import { SignInContainer, SignInButtonsContainer, SignInTitle } from './sign-in.styles';
+import { SignInContainer, SignInButtonsContainer, SignInTitle, SignInMessage } from './sign-in.styles';
 
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
@@ -25,8 +25,8 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
     return (
         <SignInContainer>
-            <SignInTitle>I already have an account</SignInTitle>
-            <span>Sign in with your email and password</span>
+            <SignInTitle>Already have an account ?</SignInTitle>
+            <SignInMessage>Sign in with your email and password</SignInMessage>
 
             <form onSubmit={handleSubmit}>
                 <FormInput 

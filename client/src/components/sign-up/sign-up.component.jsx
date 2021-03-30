@@ -4,7 +4,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 import { signUpStart } from '../../redux/user/users.actions';
 
-import { SignUpContainer, SingUpTitle } from './sign-up.styles'
+import { SignUpContainer, SingUpTitle, SignInMessage } from './sign-up.styles'
 
 
 const SignUp = ({ signUpStart }) => {
@@ -32,8 +32,8 @@ const SignUp = ({ signUpStart }) => {
 
     return (
         <SignUpContainer>
-            <SingUpTitle>I do not have an acount</SingUpTitle>
-            <span>Sign up with your email and password</span>
+            <SingUpTitle>Don't have an account ?</SingUpTitle>
+            <SignInMessage>Sign up with your email and password</SignInMessage>
             <form className='sign-up-form' onSubmit={handleSumbit}>
                 <FormInput
                     type='text'
