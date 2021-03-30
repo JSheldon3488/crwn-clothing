@@ -4,7 +4,7 @@ import CustomButton from '../custom-button/custom-button.component';
 import FormInput from '../form-input/form-input.component';
 import { signUpStart } from '../../redux/user/users.actions';
 
-import './sign-up.styles.scss'
+import { SignUpContainer, SingUpTitle } from './sign-up.styles'
 
 
 const SignUp = ({ signUpStart }) => {
@@ -31,8 +31,8 @@ const SignUp = ({ signUpStart }) => {
     }
 
     return (
-        <div className='sign-up'>
-            <h2>I do not have an acount</h2>
+        <SignUpContainer>
+            <SingUpTitle>I do not have an acount</SingUpTitle>
             <span>Sign up with your email and password</span>
             <form className='sign-up-form' onSubmit={handleSumbit}>
                 <FormInput
@@ -69,7 +69,7 @@ const SignUp = ({ signUpStart }) => {
                 />
                 <CustomButton type='submit'> Sign Up </CustomButton>
             </form>
-        </div>
+        </SignUpContainer>
     );
 }
 
