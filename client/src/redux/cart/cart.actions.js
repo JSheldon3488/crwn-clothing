@@ -22,3 +22,8 @@ export const removeItem = item => ({
 export const clearCart = () => ({
     type: CartActionTypes.CLEAR_CART
 });
+
+export const fillCartOnSignIn = (cartItems) => ({
+    type: CartActionTypes.FILL_CART_ON_SIGNIN,
+    payload: cartItems
+})

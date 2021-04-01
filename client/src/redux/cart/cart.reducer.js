@@ -33,6 +33,11 @@ const cartReducer = (state=INITIAL_STATE, action) => {
                 ...state,
                 cartItems: []
             }
+        case CartActionTypes.FILL_CART_ON_SIGNIN:
+            return {
+                ...state,
+                cartItems: action.payload
+            }
         default:
             return state;
     }
