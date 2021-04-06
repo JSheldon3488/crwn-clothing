@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const CheckoutItemContainer = styled.div`
+export const CheckoutItemDiv = styled.div`
     width: 100%;
     display: flex;
     min-height: 100px;
@@ -13,8 +13,10 @@ export const CheckoutItemContainer = styled.div`
     font-size: 18px;
   }
 `;
+CheckoutItemDiv.displayName = 'CheckoutItemStyles';
 
-export const ImageContainer = styled.div`
+
+export const ImageContainerDiv = styled.div`
     width: 23%;
     padding-right: 15px;
 
@@ -23,16 +25,20 @@ export const ImageContainer = styled.div`
       height: 100%;
     }
 `;
+ImageContainerDiv.displayName = 'ImageContainerStyles';
 
-export const TextContainer = styled.span`
+
+export const TextSpan = styled.span`
     width: 23%;
 
     @media screen and (max-width: 800px) {
         width: 22%;
     }
 `;
+TextSpan.displayName = 'TextStyles';
 
-export const QuantityContainer = styled(TextContainer)`
+
+export const QuantityContainer = styled(TextSpan)`
     display: flex;
 
     div {
@@ -48,8 +54,11 @@ export const QuantityContainer = styled(TextContainer)`
         }
     }
 `;
+QuantityContainer.displayName = 'QuantityStyles';
 
-export const RemoveButtonContainer = styled.div`
+
+export const RemoveButtonDiv = styled.div`
     padding-left: 12px;
     cursor: pointer;
 `; 
+RemoveButtonDiv.displayName = 'RemoveButtonStyles';

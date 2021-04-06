@@ -1,34 +1,25 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { CheckoutItemDiv, ImageContainerDiv, TextSpan, QuantityContainer, RemoveButtonDiv} from './checkout-item.styles';
 
-import { clearItemFromCart, addItem, removeItem } from '../../redux/cart/cart.actions';
-
-import { CheckoutItemContainer, ImageContainer, TextContainer, QuantityContainer, RemoveButtonContainer} from './checkout-item.styles';
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
     const {imageUrl, name, quantity, price } = cartItem;
     
     return (
-        <CheckoutItemContainer>
-            <ImageContainer>
+        <CheckoutItemDiv>
+            <ImageContainerDiv>
                 <img src={imageUrl} alt='item' />
-            </ImageContainer>
-            <TextContainer>{name}</TextContainer>
+            </ImageContainerDiv>
+            <TextSpan>{name}</TextSpan>
             <QuantityContainer>
-                <div onClick={() => removeItem(cartItem)}>&#10094;</div>
+                <div className='remove' onClick={() => removeItem(cartItem)}>&#10094;</div>
                 <span>{quantity}</span>
-                <div onClick={() => addItem(cartItem)}>&#10095;</div>
+                <div className= 'add' onClick={() => addItem(cartItem)}>&#10095;</div>
             </QuantityContainer>
-            <TextContainer>${price}</TextContainer>
-            <RemoveButtonContainer onClick={() => clearItem(cartItem)}>&#10006;</RemoveButtonContainer>
-        </CheckoutItemContainer>
+            <TextSpan>${price}</TextSpan>
+            <RemoveButtonDiv onClick={() => clearItem(cartItem)}>&#10006;</RemoveButtonDiv>
+        </CheckoutItemDiv>
     );
 }
 
-const mapDispatchToProps = dispatch => ({
-    clearItem: (item) => dispatch(clearItemFromCart(item)),
-    addItem: (item) => dispatch(addItem(item)),
-    removeItem: (item) => dispatch(removeItem(item))
-});
-
-export default connect(null, mapDispatchToProps)(CheckoutItem);
+export default CheckoutItem;
