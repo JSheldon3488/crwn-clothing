@@ -1,17 +1,17 @@
 import React from 'react';
 
-import { CartItemContainer, ImageContainer, ItemDetailsContainer, NameContainer, PriceContainer } from './cart-item.styles';
+import { CartItemDiv, ImageContainer, ItemDetailsDiv, NameSpan, PriceSpan } from './cart-item.styles';
 
 const CartItem = ({ item: { imageUrl, price, name, quantity } }) => (
-  <CartItemContainer>
+  <CartItemDiv>
     <ImageContainer src={imageUrl} alt='item' />
-    <ItemDetailsContainer>
-      <NameContainer>{name}</NameContainer>
-      <PriceContainer>
+    <ItemDetailsDiv>
+      <NameSpan>{name}</NameSpan>
+      <PriceSpan>
         {quantity} x ${price}
-      </PriceContainer>
-    </ItemDetailsContainer>
-  </CartItemContainer>
+      </PriceSpan>
+    </ItemDetailsDiv>
+  </CartItemDiv>
 );
 
 export default React.memo(CartItem);

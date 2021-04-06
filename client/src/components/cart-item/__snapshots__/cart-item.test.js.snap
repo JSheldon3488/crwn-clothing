@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Cart-Item Component test render and SnapShot 1`] = `ShallowWrapper {}`;
+exports[`CartItem Component Tests should render and match CartItem snapshot 1`] = `ShallowWrapper {}`;
