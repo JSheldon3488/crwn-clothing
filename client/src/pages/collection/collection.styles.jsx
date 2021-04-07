@@ -14,7 +14,7 @@ export const CollectionTitle = styled.h2`
     margin: 0 auto 30px;
 `;
 
-export const CollectionItemsContainer = styled.div`
+export const CollectionItemsDiv = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 10px;
@@ -28,3 +28,4 @@ export const CollectionItemsContainer = styled.div`
         grid-gap: 15px;
     }
 `;
+CollectionItemsDiv.displayName = 'CollectionItemsStyles';
