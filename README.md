@@ -1,0 +1,1 @@
+This is the course project from Zero to Mastery Complete React Developer in 2021. This project has a simple server set up and uses that along with Firebase for the backend, React on the frontend, and Heroku for deployment.
