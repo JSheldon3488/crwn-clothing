@@ -8,7 +8,9 @@ const CartDropdown = ({ cartItems, history, toggleCartHidden }) => {
     const myRef = useRef();
 
     const handleClickOutside = event => {
-        if (!myRef.current.contains(event.target)) {
+        console.log(myRef.current)
+        console.log(event.target)
+        if (myRef.current && !myRef.current.contains(event.target)) {
             toggleCartHidden();
         }
     };
