@@ -1,16 +1,18 @@
 import styled from 'styled-components';
 
-export const CollectionPreviewContainer = styled.div`
+export const CollectionPreviewDiv = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 30px;
-
+  margin: 15px 10px;
+  
   @media screen and (max-width: 800px) {
     align-items: center;
   }
 `;
+CollectionPreviewDiv.displayName = 'CollectionPreviewStyles';
 
-export const TitleContainer = styled.h1`
+
+export const Title = styled.h1`
   font-size: 28px;
   margin-bottom: 25px;
   cursor: pointer;
@@ -18,14 +20,12 @@ export const TitleContainer = styled.h1`
     color: grey;
   }
 `;
+Title.displayName = 'TitleStyles';
 
-export const PreviewContainer = styled.div`
+
+export const PreviewDiv = styled.div`
   display: flex;
+  flex-flow: row wrap;
   justify-content: space-between;
-
-  @media screen and (max-width: 800px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
-  }
 `;
+PreviewDiv.displayName = 'PreviewStyles';
