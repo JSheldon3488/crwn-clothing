@@ -1,10 +1,25 @@
-import React from 'react';
+import React, {useEffect, useRef } from 'react';
+
 import CartItem from '../cart-item/cart-item.component';
 import { CartDropdownDiv, CartItemsDiv, EmptyMessageSpan, CartDropdownButton } from './cart-dropdown.styles';
 
 
-const CartDropdown = ({ cartItems, history, toggleCartHidden }) => (
-    <CartDropdownDiv>
+const CartDropdown = ({ cartItems, history, toggleCartHidden }) => {
+    const myRef = useRef();
+
+    const handleClickOutside = event => {
+        if (!myRef.current.contains(event.target)) {
+            toggleCartHidden();
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside)
+    })
+
+    return (
+    <CartDropdownDiv ref={myRef}>
         <CartItemsDiv >
         { cartItems.length ?
             cartItems.map(item => (
@@ -16,10 +31,11 @@ const CartDropdown = ({ cartItems, history, toggleCartHidden }) => (
         <CartDropdownButton onClick={() => {
             history.push('/checkout');
             toggleCartHidden();
-        }}> 
+        }}>
             GO TO CHECKOUT
         </CartDropdownButton>
     </CartDropdownDiv>
-)
+    )
+}
 
 export default CartDropdown;

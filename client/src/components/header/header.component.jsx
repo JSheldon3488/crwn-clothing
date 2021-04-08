@@ -8,7 +8,7 @@ import CartDropdownContainer from '../cart-dropdown/cart-dropdown.container';
 
 import { selectCartHidden } from '../../redux/cart/cart.selectors';
 import { selectCurrentUser } from '../../redux/user/user.selectors';
-import { signOutStart } from '../../redux/user/users.actions'
+import { signOutStart } from '../../redux/user/users.actions';
 
 import { HeaderContainer, LogoContainer, OptionsContainer, OptionLink } from './header.styles'
 

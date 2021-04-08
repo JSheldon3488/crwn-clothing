@@ -18,7 +18,7 @@ const mapDispatchToProps = dispatch => ({
 
 const CartDropdownContainer = compose(
     withRouter,
-    connect(mapStateToProps, mapDispatchToProps)
+    connect(mapStateToProps, mapDispatchToProps),
 )(CartDropdown)
 
 export default CartDropdownContainer;
