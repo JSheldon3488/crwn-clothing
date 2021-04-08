@@ -24,6 +24,7 @@
         "stripe": "6.28.0"
     },
     "devDependencies": {
+        "@types/jest": "^26.0.22",
         "concurrently": "^6.0.0",
         "nodemon": "^2.0.7"
     }

@@ -7,5 +7,6 @@ const CustomButton = ({children, ...otherProps}) => (
         {children}
     </CustomButtonContainer>
 )
+CustomButton.displayName = 'CustomButton';
 
 export default CustomButton;
