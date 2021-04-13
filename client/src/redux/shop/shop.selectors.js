@@ -23,7 +23,7 @@ export const selectCollection = memoize((collectionURLParam) => createSelector(
 ));
 
 export const selectCollectionItem = (collectionURLParam, itemUrlParam) => createSelector(
-    selectCollection(collectionURLParam),
+    [selectCollection(collectionURLParam)],
     collection => collection ? collection.items.filter(item => item.id === parseInt(itemUrlParam))[0]
                              : null
 );

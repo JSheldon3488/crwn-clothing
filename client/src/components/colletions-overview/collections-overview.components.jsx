@@ -5,9 +5,7 @@ import CollectionPreview from '../collection-preview/collection-preview.componen
 import { CollectionsOverviewStylesContainer } from './collection-overview.styles';
 
 
-const CollectionsOverview = ({ collections }) => {
-    console.log(collections)
-    return (
+const CollectionsOverview = ({ collections }) => (
     <CollectionsOverviewStylesContainer>
         {
             collections.map(({ id, ...otherCollectionProps }) => (
@@ -15,7 +13,6 @@ const CollectionsOverview = ({ collections }) => {
             ))
         }
     </CollectionsOverviewStylesContainer>
-    );
-}
+);
 
 export default CollectionsOverview;

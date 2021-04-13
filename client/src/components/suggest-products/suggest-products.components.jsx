@@ -7,13 +7,28 @@ import { SuggestedProductsDiv, Title, SuggestedSectionDiv } from './suggest-prod
 const SuggestedProducts = ({ collection, currItemId }) => {
     const { routeName, items } = collection;
 
+    const getRandom = (items, n) => {
+        const result = [];
+        const taken = [];
+        let added = 0;
+
+        while (added < n) {
+            const index = Math.floor(Math.random()*items.length);
+            if (index + items[0].id !== currItemId && !taken.includes(index)) {
+                result.push(items[index]);
+                taken.push(index)
+                added += 1;
+            }
+        }
+        return result;
+    }
+    
     return (
         <SuggestedSectionDiv>
             <Title>You may also like... </Title>
             <SuggestedProductsDiv>
             {
-            items.slice(0,4)
-                .filter(item => item.id !== currItemId)
+                getRandom(items, 2)
                 .map((item) => (
                     <CollectionItemContainer key={item.id} item={item} routeName={routeName} />
                 ))
