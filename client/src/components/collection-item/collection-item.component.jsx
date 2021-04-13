@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import {
   CollectionItemDiv,
@@ -10,12 +11,18 @@ import {
 } from './collection-item.styles';
 
 
-const CollectionItem = ({ item, addItem }) => {
-  const { name, price, imageUrl } = item;
+const CollectionItem = ({ item, addItem, history, match, routeName}) => {
+  const { id, name, price, imageUrl } = item;
 
   return (
     <CollectionItemDiv>
-      <BackgroundImage className='image' imageUrl={imageUrl} />
+      <BackgroundImage 
+        className='image' 
+        imageUrl={imageUrl} 
+        onClick={() => { 
+          match.url === '/shop' ? history.push(`${match.url}/${routeName}/${id}`)
+                                : history.push(`${match.url}/${id}`)}}
+      />
       <CollectionFooterDiv>
         <NameSpan>{name}</NameSpan>
         <PriceSpan>${price}</PriceSpan>
@@ -28,4 +35,4 @@ const CollectionItem = ({ item, addItem }) => {
 };
 
 
-export default CollectionItem;
+export default withRouter(CollectionItem);

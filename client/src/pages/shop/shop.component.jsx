@@ -7,6 +7,7 @@ import Spinner from '../../components/spinner/spinner.component';
 
 const CollectionsOverviewContainer = lazy(() => import('../../components/colletions-overview/collections-overview.container'))
 const CollectionPageContainer = lazy(() => import('../collection/collection.container'))
+const ProductPage = lazy(() => import('../product-page/product-page.component'))
 
 const ShopPage = ({ fetchCollectionsStart, match }) => {
     useEffect(() => {
@@ -21,9 +22,14 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
                 path={`${match.path}`} 
                 component={CollectionsOverviewContainer}
             />
-            <Route 
+            <Route
+                exact
                 path={`${match.path}/:collectionId`} 
                 component={CollectionPageContainer} 
+            />
+            <Route
+                path={`${match.path}/:collectionId/:itemId`} 
+                component={ProductPage} 
             />
         </Suspense>
         </div>
