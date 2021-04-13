@@ -1,22 +1,9 @@
 import styled from 'styled-components';
 import CustomButton from '../custom-button/custom-button.component'
 
-export const PageDiv = styled.div`
-    display: block;
-
-    @media screen and (min-width: 600px) {
-        margin-top: 50px;
-    }
-
-    @media screen and (min-width: 900px) {
-        margin-top: 100px;
-    }
-`;
-
 
 export const ItemDiv = styled.div`
     display: block;
-    height: 480px;
     width: 80%;
     margin: auto;
 
@@ -25,16 +12,11 @@ export const ItemDiv = styled.div`
         grid-template-columns: repeat(2, minmax(360px, 1fr));
         gap: 10px;
     }
-
-    @media screen and (min-width: 1250px) {
-        height: 600px;
-
-    }
 `;
 
 
 export const ItemImage = styled.div`
-    height: 100%;
+    height: 480px;
     width: 100%;
     background-size: contain;
     background-repeat: no-repeat;
@@ -44,13 +26,16 @@ export const ItemImage = styled.div`
     @media screen and (min-width: 900px) {
         margin: 0;
     }
+
+    @media screen and (min-width: 1250px) {
+        height: 600px;
+
+    }
 `;
 ItemImage.displayName = "ItemImageStyles"
 
 
 export const ItemDetailsDiv = styled.div`
-    display: block;
-
     @media screen and (min-width: 900px) {
     display: grid;
     grid-template-columns: 30% 70%;

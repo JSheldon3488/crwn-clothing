@@ -20,8 +20,16 @@ const CollectionItem = ({ item, addItem, history, match, routeName}) => {
         className='image' 
         imageUrl={imageUrl} 
         onClick={() => { 
-          match.url === '/shop' ? history.push(`${match.url}/${routeName}/${id}`)
-                                : history.push(`${match.url}/${id}`)}}
+          if (match.url === '/shop') {
+            history.push(`${match.url}/${routeName}/${id}`)
+          }
+          else if (Number.isNaN(parseInt(match.url.slice(-1)))) {
+            history.push(`${match.url}/${id}`)
+          }
+          else {
+            history.push(`/shop/${routeName}/${id}`)
+          }
+      }}
       />
       <CollectionFooterDiv>
         <NameSpan>{name}</NameSpan>

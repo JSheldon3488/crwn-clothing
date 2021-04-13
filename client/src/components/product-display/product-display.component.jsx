@@ -2,11 +2,10 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { addItem } from '../../redux/cart/cart.actions';
 
-import { ItemImage, PageDiv, ItemDiv, ItemDetailsDiv, NameSpan, PriceSpan, DescriptionSpan, AddButton } from './product-display.styles'
+import { ItemImage, ItemDiv, ItemDetailsDiv, NameSpan, PriceSpan, DescriptionSpan, AddButton, PageDiv } from './product-display.styles'
 
 
 const ProductDisplay = ({ price, name, imageUrl, addItem }) => (
-    <PageDiv>
         <ItemDiv>
             <ItemImage className='background-image' imageUrl={imageUrl} />
             <ItemDetailsDiv>
@@ -18,7 +17,6 @@ const ProductDisplay = ({ price, name, imageUrl, addItem }) => (
                 <AddButton onClick={() => addItem({price, name, imageUrl})}>Add to Cart</AddButton>
             </ItemDetailsDiv>
         </ItemDiv>
-    </PageDiv>
 )
 
 const mapDispatchToProps = dispatch => ({
